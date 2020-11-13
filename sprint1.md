@@ -1,41 +1,11 @@
-# Liste des issues
+# Sprint 1 : 02/11/20 -> 13/11/20
 
 <table>
   <tbody>
-    <tr>
       <th>ID</th>
       <th>US</th>
       <th>Coût</th>
       <th>Priorité</th>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>En tant qu’utilisateur, si je n’ai pas créé de projet je souhaite avoir accès à une page de bienvenue où il y a un bouton afin de créer mon premier projet. Une fenêtre s’ouvre alors où je dois renseigner le titre du projet. Je peux valider la création de projet ou l’annuler.</td>
-      <td>2</td>
-      <td>Très basse</td>
-    </tr>
-
-<tr>
-      <td>2</td>
-      <td>En tant qu’utilisateur, je souhaite cliquer sur un bouton “supprimer” sur la pages des projets à droite de chaque projet afin de supprimer un projet en cliquant dessus. Une fenêtre de confirmation s’ouvre alors où je peux valider ou annuler mon choix. </td>
-      <td>1</td>
-      <td>Très basse</td>
-</tr>
-
-<tr>
-      <td>3</td>
-      <td>En tant qu’utilisateur, si j’ai un ou plusieurs projets de créés je souhaite, à l’ouverture de l’application, avoir accès à la page d’accueil du projet modifié le plus récemment. La page d’accueil montre le sprint actif du projet</td>
-      <td>2</td>
-      <td>Très basse</td>
-</tr>
-
-<tr>
-      <td>4</td>
-      <td>En tant qu’utilisateur, je souhaite avoir accès à une page regroupant tous les projets afin de pouvoir changer de projet actif en cliquant sur son nom.</td>
-      <td>2</td>
-      <td>Très basse</td>
-</tr>
-
 <tr>
       <td>5</td>
       <td>En tant qu’utilisateur, je souhaite avoir accès à une barre de navigation où il y aura les boutons :
@@ -212,145 +182,15 @@ Dès qu’un champs est modifié, sa valeur est sauvegardée.
       <td>Basse</td>
 </tr>
 
-<tr>
-      <td>25</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir avoir accès à une page “liste des tests” qui contient tous les tests de mon projet. Pour chaque test,  il y a d’affiché l’identifiant, le titre, le dernier lancement, le résultat et un bouton “visionner le test” qui affiche la vidéo du dernier lancement du test. En haut de la page je vois le taux de réussite de tous les tests de la liste</td>
-      <td>2</td>
-      <td>Très haute</td>
-</tr>
-
-<tr>
-      <td>26</td>
-      <td>En tant qu’utilisateur, je souhaite avoir accès à une page “scénarios de tests” où je peux voir tous les scénarios de test que j’ai proposés</td>
-      <td>2</td>
-      <td>Très basse</td>
-</tr>
-
-<tr>
-      <td>27</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir, depuis la page “scénarios de tests”, appuyer sur un bouton “+” qui ouvre un formulaire contenant un champs texte “scénario”. Lorsque je valide le scénario, ce dernier est ajouté à la liste de scénario.</td>
-      <td>1</td>
-      <td>Très haute</td>
-</tr>
-
-<tr>
-      <td>28</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir, depuis la page “scénarios de tests”, appuyer sur un bouton “Modifier” en face d’un scénario qui ouvre un formulaire avec un champs texte pré-rempli avec le scénario correspondant, et qui est modifiable.
-</td>
-      <td>2</td>
-      <td>Basse</td>
-</tr>
-<tr>
-      <td>29</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir, depuis la page “scénarios de tests”, appuyer sur un bouton “Valider” en face d’un scénario, afin de supprimer le scénario de la liste et le rajouter dans la liste des tests et rediriger vers la page “liste des tests”.</td>
-      <td>2</td>
-      <td>Très haute</td>
-</tr>
-<tr>
-      <td>30</td>
-      <td>En tant qu’utilisateur, je souhaite que lorsque que j’ai validé un scénario sur la page “scénarios de tests” et que je suis redirigé vers la page “liste des tests”, qu’une fenêtre s’ouvre alors dans laquelle je dois renseigner :
-<ul>
-<li>le titre du test dans une boîte de texte
-le type du test (fonctionnel, intégration, unitaire) à sélectionner à l’aide d’une liste déroulante </li>
-<li>si le type de test est fonctionnel je sélectionne une issue dans une liste déroulante pour associer le test à l’issue</li>
-<li>si le test passe en cochant une une boîte “OK” ou ne passe pas en cochant une boîte “KO”. Lorsque je coche une boîte, un calendrier apparaît : je dois cliquer sur une date afin de renseigner la date à laquelle le test est ou n’est pas passé</li>
-</ul>
-Un bouton "Test en cypress" est présent sous ces champs, si j'appuie dessus, un bouton "Upload une video" apparait. Lorsque j'appuie sur ce bouton, un explorateur de fichier s'ouvre pour que j'upload une vidéo du test.
-Je ne peux pas valider la création à moins d’avoir tout renseigné mais je peux l’annuler. 
-Je peux éventuellement renseigner une boîte de texte “commentaire”.
-L’identifiant du test est généré automatiquement.
-</td>
-      <td>3</td>
-      <td>Très haute</td>
-</tr>
-<tr>
-      <td>31</td>
-      <td> En tant qu’utilisateur, je souhaite pouvoir cliquer sur un test ce qui ouvre une fenêtre où je peux sélectionner à quelle date du test je veux accéder. Pour une date sélectionnée je peux lire :
-      <ul>
-<li>le résultat de cette date du test</li>
-<li>la vidéo de cette date du test si elle existe</li>
-<li>le commentaire de cette date du test</li>
-</ul>
-et je peux lire, peu importe la date : 
-<ul>
-<li>l’identifiant</li>
-<li>le titre</li>
-<li>le résultat attendu</ul>
-</ul>
-</td>
-      <td>3</td>
-      <td>Haute</td>
-</tr>
-<tr>
-      <td>32</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur un bouton “x” présent à gauche de chaque test sur la page “liste des tests” afin de supprimer le test. Une fenêtre de validation apparaît alors me demandant de valider mon choix ou d’annuler.</td>
-      <td>2</td>
-      <td>Haute</td>
-</tr>
-<tr>
-      <td>33</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur un bouton “Tester à nouveau” présent à droite de chaque test sur la page “liste des tests” afin de le tester à nouveau. Une fenêtre apparaît dans laquelle je dois renseigner :
-      <ul>
-<li>si le test passe en cochant une une boîte “OK” ou ne passe pas en cochant une boîte “KO”. Lorsque je coche une boîte, un calendrier apparaît : je dois cliquer sur une date afin de renseigner la date à laquelle le test est ou n’est pas passé</li>
-<li>une vidéo du test en explorant mes fichiers pour uploader la vidéo, si le test est réalisé en cypress.</li>
-</ul>
-Je peux éventuellement renseigner un boîte de texte “commentaire”.
-</td>
-      <td>3</td>
-      <td>Très haute</td>
-</tr>
-
-<tr>
-      <td>34</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir avoir accès à une page qui comporte toutes les releases de mon projet en cours. Chaque release sera caractérisée par un fichier zip, sa date de création, la liste des issues réalisées et un id sous la forme X.Y.Z où X est le numéro de version majeure, Y est le numéro de version mineure et Z le numéro du patch. </td>
-      <td>3</td>
-      <td>Très haute</td>
-</tr>
-<tr>
-      <td>35</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir créer une nouvelle release en appuyant sur un bouton “+”. Il faudra ensuite donner un fichier zip et en choisissant un des niveaux de modification suivants grâce à des boutons radio :
-      <ul>
-<li>version majeure</li>
-<li>version mineure</li>
-<li>patch</li>
-</ul>
-Pour la première release, la version est automatiquement la 1.0.0 et il n’y a pas la possibilité de le modifier. Si un niveau de modification est sélectionné, le numéro de version est le même que le précédent, avec le numéro du niveau correspondant incrémenté de 1.
-Il faut choisir grâce à une liste déroulante les id de toutes les issues réalisées. 
-Il faut aussi que j’ai renseigné une documentation utilisateur et une documentation d’installation sur la page “documentation”. Si la release est créée alors les 2 documentations de la page "documentation" sont celles de cette dite release.
-</td>
-      <td>5</td>
-      <td>Très haute</td>
-</tr>
-<tr>
-      <td>36</td>
-      <td>En tant qu’utilisateur je veux pouvoir accéder une page “documentation” dans laquelle il y a 2 champs : documentation utilisateur et documentation d’installation.</td>
-      <td>1</td>
-      <td>Très haute</td>
-</tr>
-<tr>
-      <td>37</td>
-      <td>En tant qu’utilisateur je veux pouvoir cliquer sur un bouton “ajouter” à côté des 2 catégories (documentation utilisateur et documentation d’installation) qui ouvre une fenêtre de gestion de fichiers  afin de téléverser le fichier texte de la documentation souhaitée. </td>
-      <td>1</td>
-      <td>Très haute</td>
-</tr>
-<tr>
-      <td>38</td>
-      <td>En tant qu'utilisateur je veux pouvoir cliquer sur un bouton "versions" sur la page "documentation" à côté des 2 catégories(installation, utilisation) afin d'afficher à droite de l'écran une liste "historique" contenant des liens de la documentation des releases précédentes de la catégorie(installation, utilisation).  Lorsque je clique sur un lien je télécharge la documentation. Les boutons sont grisés s'il n'y a pas eu de release. Si je clique de nouveau sur "versions" la fenêtre à droite de l'écran disparaît.</td>
-      <td>3</td>
-      <td>Haute</td>
-</tr>
-<tr>
-      <td>39</td>
-      <td>En tant qu'utilisateur je veux pouvoir cliquer sur un bouton "télécharger" sur la page "documentation" à côté des 2 catégorie afin de télécharger la documentation de la catégorie sélectionnée.</td>
-      <td>1</td>
-      <td>Très haute</td>
-</tr>
-
-<tr>
-      <td>40</td>
-      <td>En tant qu'utilisateur je veux pouvoir effectuer un drag and drop sur la page "documentation" d'un lien de la partie "historique" vers la partie de la page à gauche de "historique" afin d'utiliser ce fichier comme documentation actuelle de la catégorie (installation, utilisation) depuis laquelle j'ai ouvert "historique". </td>
-      <td>2</td>
-      <td>Haute</td>
-</tr>
-  </tbody>
+   </tbody>
 </table>
+<hr/>
+<p>
+Nombre d'issues durant le sprint: <strong>19</strong>
+</p>
+<p>
+Somme de la difficulté des issues du sprint: <strong>47</strong>
+</p>
+<p>
+Somme de la difficulté des issues réalisées du sprint: <strong>36</strong>
+</p>
