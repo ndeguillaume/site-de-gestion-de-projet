@@ -46,9 +46,6 @@ INSERT INTO task_issues_dependency (project_id, fk_task_id, fk_issue_id)
 VALUES(1, 2, 2);
 
 INSERT INTO task_issues_dependency (project_id, fk_task_id, fk_issue_id)
-VALUES(1, 2, 3);
-
-INSERT INTO task_issues_dependency (project_id, fk_task_id, fk_issue_id)
 VALUES(1, 3, 4);
 INSERT INTO task_issues_dependency (project_id, fk_task_id, fk_issue_id)
 VALUES(1, 3, 5);
@@ -62,10 +59,3 @@ INSERT INTO task_dependency (project_id, child_task_id, parent_task_id)
 VALUES(1, 3, 1);
 INSERT INTO task_dependency (project_id, child_task_id, parent_task_id)
 VALUES(1, 3, 2);
-
-INSERT INTO task_todo (project_id, fk_task_id)
-VALUES(1, 3);
-INSERT INTO task_inprogress (project_id, fk_task_id)
-VALUES(1, 2);
-INSERT INTO task_done (project_id, fk_task_id)
-VALUES(1, 1);
