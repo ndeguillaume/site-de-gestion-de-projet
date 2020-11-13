@@ -3,8 +3,8 @@ USE CDP;
 INSERT INTO project (title, last_modified) VALUES("projet 1", NOW());
 INSERT INTO project (title, last_modified) VALUES("projet 2", NOW());
 
-INSERT INTO sprint (project_id, title, begin_date, end_date) 
-VALUES("1","sprint 1", NOW(), ADDDATE(NOW(), INTERVAL 10 DAY));
+INSERT INTO sprint (project_id, title)
+VALUES("1","sprint 1");
 INSERT INTO sprint (project_id, title) VALUES("1","sprint 2");
 INSERT INTO sprint (project_id, title, begin_date, end_date) 
 VALUES("1","sprint 3", ADDDATE(NOW(), INTERVAL -10 DAY), ADDDATE(NOW(), INTERVAL -1 DAY));

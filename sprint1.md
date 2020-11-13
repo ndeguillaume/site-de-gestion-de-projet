@@ -192,5 +192,5 @@ Nombre d'issues durant le sprint: <strong>19</strong>
 Somme de la difficulté des issues du sprint: <strong>47</strong>
 </p>
 <p>
-Somme de la difficulté des issues réalisées du sprint: <strong>36</strong>
+Somme de la difficulté des issues réalisées du sprint: <strong>31</strong>
 </p>
