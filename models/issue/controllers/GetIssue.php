@@ -1,7 +1,10 @@
 <?php
-if ((function_exists('session_status') 
-&& session_status() !== PHP_SESSION_ACTIVE) || !session_id()) {
-session_start();
+
+if (
+    (function_exists('session_status')
+    && session_status() !== PHP_SESSION_ACTIVE) || !session_id()
+) {
+    session_start();
 }
 ?>
 <?php
@@ -11,10 +14,9 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-if($_SERVER['REQUEST_METHOD'] == 'GET'){
-    
-    include_once("../../../data/mysql/includes/Database.php");
-    include_once("../data/Issue.php");
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    include_once "../../../data/mysql/includes/Database.php";
+    include_once "../data/Issue.php";
 
     $database = new Database();
     $db = $database->getConnection();
@@ -22,14 +24,15 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     $issue = new Issue($db);
     $issue->read($_SESSION["project_id"], $_GET["id"]);
 
-    echo json_encode(array(
+    echo json_encode(
+        array(
             $issue->id,
             $issue->title,
             $issue->description,
             $issue->cost,
             $issue->priority,
-            $issue->sprint_id
-        ));
+            $issue->sprint_id,
+            $issue->order_in_sprint,
+        )
+    );
 }
-
-?>

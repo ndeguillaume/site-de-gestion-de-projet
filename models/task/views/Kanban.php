@@ -1,7 +1,10 @@
 <?php
-if ((function_exists('session_status') 
-&& session_status() !== PHP_SESSION_ACTIVE) || !session_id()) {
-session_start();
+
+if (
+    (function_exists('session_status')
+    && session_status() !== PHP_SESSION_ACTIVE) || !session_id()
+) {
+    session_start();
 }
 ?>
 <!DOCTYPE html>
@@ -9,20 +12,20 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php 
-    include_once("../../../includes/Style.php"); 
-    include_once("../../../includes/Scripts.php"); 
+    <?php
+    require_once "../../../includes/Style.php";
+    require_once "../../../includes/Scripts.php";
     ?>
     <script type="text/javascript" src="../controllers/TasksDragAndDrop.js" defer></script>
     <title>Kanban</title>
 </head>
 <body>
     <?php
-    include_once("../../../data/mysql/includes/Database.php");
-    include_once("../../../includes/Navbar.php"); 
-    include_once("../data/Tasks.php");
-    include_once("../../../includes/Util.php"); 
-    $database= new Database();
+    require_once "../../../data/mysql/includes/Database.php";
+    require_once "../../../includes/Navbar.php";
+    require_once "../data/Tasks.php";
+    require_once "../../../includes/Util.php";
+    $database = new Database();
     $db = $database->getConnection();
     ?>
 
@@ -39,48 +42,47 @@ session_start();
             </div>
         </div>
         <div class="body">
-            <div class="kanban-sortable column-body" id="todo-column-body">
-                <!-- <div class="kanban-sortable"> -->
+            <div class="column-body" id="todo-column-body">
+                <div class="kanban-sortable">
                     <?php
                     $tasks = new Tasks($db);
-                    foreach($tasks->getTasksToDo() as $tasks_todo) {
-                        echo "<div class='task' id='task-".$tasks_todo[1]."'>";
-                        echo "<div id='draggable-".$tasks_todo[1]."'>";
-                        echo "<span class='task-info'> #".$tasks_todo[1]." ".$tasks_todo[2]." </span>";
+                    foreach ($tasks->getTasksToDo() as $tasks_todo) {
+                        echo "<div class='ui-state-default' id='task-" . $tasks_todo[1] . "'>";
+                        echo "<div id='draggable-" . $tasks_todo[1] . "'>";
+                        echo "<span class='task-info'> #" . $tasks_todo[1] . " " . $tasks_todo[2] . " </span>";
                         echo "</div>";
                         echo "</div>";
                     }
                     ?>
-                <!-- </div> -->
+                </div>
             </div>
-            <div class="kanban-sortable column-body" id="inprogress-column-body">
-                <!-- <div class="kanban-sortable"> -->
+            <div class="column-body" id="inprogress-column-body">
+                <div class="kanban-sortable">
                 <?php
                     $tasks = new Tasks($db);
-                    foreach($tasks->getTasksInProgress() as $tasks_inprogress) {
-                        echo "<div class='task' id='task-".$tasks_inprogress[1]."'>";
-                        echo "<div id='draggable-".$tasks_inprogress[1]."'>";
-                        echo "<span class='task-info'> #".$tasks_inprogress[1]." ".$tasks_inprogress[2]." </span>";
-                        echo "</div>";
-                        echo "</div>";
-
-                    }
-                    ?>
-                <!-- </div> -->
+                foreach ($tasks->getTasksInProgress() as $tasks_inprogress) {
+                    echo "<div class='ui-state-default' id='task-" . $tasks_inprogress[1] . "'>";
+                    echo "<div id='draggable-" . $tasks_inprogress[1] . "'>";
+                    echo "<span class='task-info'> #" . $tasks_inprogress[1] . " " . $tasks_inprogress[2] . " </span>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+                ?>
+                </div>
             </div>
-            <div class="kanban-sortable column-body" id=done-column-body>
-                <!-- <div class="kanban-sortable"> -->
+            <div class="column-body" id=done-column-body>
+                <div class="kanban-sortable">
                 <?php
                     $tasks = new Tasks($db);
-                    foreach($tasks->getTasksDone() as $tasks_done) {
-                        echo "<div class='task' id='task-".$tasks_done[1]."'>";
-                        echo "<div id='draggable-".$tasks_done[1]."'>";
-                        echo "<span class='task-info'> #".$tasks_done[1]." ".$tasks_done[2]." </span>";
-                        echo "</div>";
-                        echo "</div>";
-                    }
-                    ?>
-                <!-- </div> -->
+                foreach ($tasks->getTasksDone() as $tasks_done) {
+                    echo "<div class='ui-state-default' id='task-" . $tasks_done[1] . "'>";
+                    echo "<div id='draggable-" . $tasks_done[1] . "'>";
+                    echo "<span class='task-info'> #" . $tasks_done[1] . " " . $tasks_done[2] . " </span>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+                ?>
+                </div>
             </div>
         </div>
     </div>     
