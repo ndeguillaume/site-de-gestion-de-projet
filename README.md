@@ -242,7 +242,7 @@ Dès qu’un champs est modifié, sa valeur est sauvegardée.
 </tr>
 <tr>
       <td>29</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir, depuis la page “scénarios de tests”, appuyer sur un bouton “Valider” en face d’un scénario, afin de supprimer le scénario de la liste et le rajouter dans la liste des tests et rediriger vers la page “liste des tests”.</td>
+      <td>En tant qu’utilisateur, je souhaite pouvoir, depuis la page “scénarios de tests”, appuyer sur un bouton “Valider” en face d’un scénario et le rajouter dans la liste des tests et rediriger vers la page “liste des tests”.</td>
       <td>2</td>
       <td>Très haute</td>
 </tr>

@@ -1,8 +1,8 @@
 <?php
 class Database{
-    private $host = "localhost";
+    private $host = "database:3306";
     private $db_name = "CDP";
-    private $username = "user";
+    private $username = "root";
     private $password = "";
     private $connexion;
 
