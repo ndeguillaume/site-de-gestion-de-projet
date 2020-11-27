@@ -6,9 +6,9 @@
     </thead>
     <tbody>
         <tr>
-            <td>Version</td>
-            <td>Date</td>
-            <td>Issues réalisées</td>
+            <th>Version</th>
+            <th>Date</th>
+            <th>Issues réalisées</th>
         </tr>
         <tr>
             <td>1.0.0</td>
@@ -22,3 +22,5 @@
         </tr>
     </tbody>
 </table>
+
+<a href="https://ndeguillaume.github.io">Page des realises ici</a>
