@@ -23,4 +23,4 @@
     </tbody>
 </table>
 
-<a href="https://ndeguillaume.github.io">Page des realises ici</a>
+<a href="https://ndeguillaume.github.io">Page des releases ici</a>
