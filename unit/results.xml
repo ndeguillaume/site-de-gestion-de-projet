@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="4" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.028103">
+    <testsuite name="Tests unitaires PHP" tests="4" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.028103">
+      <testsuite name="IssueTest" file="/unit/tests/IssueTest.php" tests="4" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.028103">
+        <testcase name="TestAddIssue" class="IssueTest" classname="IssueTest" file="/unit/tests/IssueTest.php" line="49" assertions="1" time="0.012024"/>
+        <testcase name="TestReadIssue" class="IssueTest" classname="IssueTest" file="/unit/tests/IssueTest.php" line="74" assertions="1" time="0.005795"/>
+        <testcase name="TestUpdateIssue" class="IssueTest" classname="IssueTest" file="/unit/tests/IssueTest.php" line="99" assertions="1" time="0.004936"/>
+        <testcase name="TestDeleteIssue" class="IssueTest" classname="IssueTest" file="/unit/tests/IssueTest.php" line="124" assertions="1" time="0.005348"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

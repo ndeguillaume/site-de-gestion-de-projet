@@ -1,0 +1,32 @@
+version: "3.5"
+
+services:
+  database-test:
+    build:
+      context: "../bin/${DATABASE}-test"
+    container_name: '${COMPOSE_PROJECT_NAME}-database'
+    restart: 'always'
+    ports:
+      - "127.0.0.1:${HOST_MACHINE_MYSQL_TEST_PORT}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ""
+      TZ: ${MYSQL_TIMEZONE}
+  phpunit:
+    build:
+      context: "../bin/phpunit/${DATABASE}"
+    container_name: '${COMPOSE_PROJECT_NAME}-phpunit'
+    links:
+        - database-test
+    depends_on:
+        - database-test
+    working_dir: /unit
+    volumes:
+        - ./:/unit
+        - ../www:/var/www/html
+        - ../bin/mysql-test/Database.php:/var/www/html/data/mysql/includes/Database.php
+networks:
+  default:
+    external: 
+      name: projet-cdp_default

@@ -255,7 +255,7 @@ Dès qu’un champs est modifié, sa valeur est sauvegardée.
 </tr>
 <tr>
       <td>31</td>
-      <td> En tant qu’utilisateur, je souhaite pouvoir cliquer sur un bouton cahier des tests de la page des test ce qui ouvre une fenêtre où je peux sélectionner à quelle date du test je veux accéder. Pour une date sélectionnée je peux lire :
+      <td> En tant qu’utilisateur, je souhaite pouvoir cliquer sur un bouton cahier des tests de la page des test ce qui ouvre une fenêtre où je peux sélectionner un test puis à quelle date du test je veux accéder. Pour une date sélectionnée je peux lire :
       <ul>
 <li>le résultat de des test à cette date</li>
 </ul>

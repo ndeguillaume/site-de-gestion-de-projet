@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+  webserver-test:
+    build: 
+        context: ../bin/${PHPVERSION}
+    links: 
+        - database-test
+    depends_on: 
+        - database-test
+    container_name: '${COMPOSE_PROJECT_NAME}-${PHPVERSION}'
+    restart: 'always'
+    ports: 
+      - "${HOST_MACHINE_UNSECURE_TEST_PORT}:80"
+    volumes: 
+      - ../www:/var/www/html
+      - ../bin/mysql-test/Database.php:/var/www/html/data/mysql/includes/Database.php
+      - ../config/php/php.ini:/usr/local/etc/php/php.ini
+      - ../config/vhosts:/etc/apache2/sites-enabled
+    
+  database-test:
+    build:
+      context: "../bin/${DATABASE}-test"
+    container_name: '${COMPOSE_PROJECT_NAME}-database'
+    restart: 'always'
+    ports:
+      - "127.0.0.1:${HOST_MACHINE_MYSQL_TEST_PORT}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ""
+      TZ: ${MYSQL_TIMEZONE}
+  cypress:
+    build:
+      context: "../bin/cypress/${DATABASE}"
+    container_name: '${COMPOSE_PROJECT_NAME}-cypress'
+    links:
+        - database-test
+    depends_on:
+        - database-test
+    environment:
+        - CYPRESS_baseUrl=http://webserver-test:80
+    working_dir: /e2e
+    volumes:
+        - ./:/e2e
