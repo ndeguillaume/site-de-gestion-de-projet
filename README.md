@@ -1,337 +1,38 @@
-# Liste des issues
+# Prérequis
 
-<table>
-  <tbody>
-    <tr>
-      <th>ID</th>
-      <th>US</th>
-      <th>Coût</th>
-      <th>Priorité</th>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>En tant qu’utilisateur, si je n’ai pas créé de projet je souhaite avoir accès à une page de bienvenue où il y a un bouton afin de créer mon premier projet. Une fenêtre s’ouvre alors où je dois renseigner le titre du projet. Je peux valider la création de projet ou l’annuler.</td>
-      <td>2</td>
-      <td>Très basse</td>
-    </tr>
+<a href="https://www.docker.com/get-started">Docker doit être installé sur la machine</a>
 
-<tr>
-      <td>2</td>
-      <td>En tant qu’utilisateur, je souhaite cliquer sur un bouton “supprimer” sur la pages des projets à droite de chaque projet afin de supprimer un projet en cliquant dessus. Une fenêtre de confirmation s’ouvre alors où je peux valider ou annuler mon choix. </td>
-      <td>1</td>
-      <td>Très basse</td>
-</tr>
+# Installation
 
-<tr>
-      <td>3</td>
-      <td>En tant qu’utilisateur, si j’ai un ou plusieurs projets de créés je souhaite, à l’ouverture de l’application, avoir accès à la page d’accueil du projet modifié le plus récemment. La page d’accueil montre le sprint actif du projet</td>
-      <td>2</td>
-      <td>Très basse</td>
-</tr>
+1. Télécharger la release (docker) 3.0.0 du projet <a href="https://ndeguillaume.github.io"> ici </a>
 
-<tr>
-      <td>4</td>
-      <td>En tant qu’utilisateur, je souhaite avoir accès à une page regroupant tous les projets afin de pouvoir changer de projet actif en cliquant sur son nom.</td>
-      <td>2</td>
-      <td>Très basse</td>
-</tr>
+2. Décompresser l'archive avec la commande <code>tar xf 3.0.0_docker.tar.gz</code>
 
-<tr>
-      <td>5</td>
-      <td>En tant qu’utilisateur, je souhaite avoir accès à une barre de navigation où il y aura les boutons :
-      <ul>
-<li>pour accéder au backlog</li>
-<li>pour accéder à la gestion des gherkins</li>
-<li>pour accéder à la liste des tâches</li>
-<li>pour accéder à la page des tests</li>
-<li>pour accéder à la page des releases </li>
-<li>pour accéder à la page des documentations</li>
-<li>pour accéder au trello des tâches</li>
-<li>pour accéder au sprint actif</li>
-</ul>
-ainsi qu'un bouton avec liste déroulante pour accéder à la page regroupant tous les projets, pour créer un nouveau projet et qui affiche les projets récents sur lesquels on peut cliquer
-</td>
-      <td>1</td>
-      <td>Moyenne</td>
-</tr>
+3. Lancer le docker du projet avec la commande <code>sh deploy.sh</code>
+4. Accédez au site à l'adresse <a href="http://127.0.0.1/">127.0.0.1</a>
 
-<tr>
-      <td>6</td>
-      <td>En tant qu’utilisateur, je souhaite avoir accès à une page “backlog” regroupant toutes les issues décrites par leur identifiant, titre, difficulté, état et coût.  Les issues sont soit dans la catégorie backlog soit dans une des catégories sprint. A côté de chaque catégorie il y a écrit le nombre d’issues associées</td>
-      <td>3</td>
-      <td>Haute</td>
-</tr>
+# Fonctionnalités
+* **Manipuler des sprints** : créer, supprimer, démarrer et terminer des sprints depuis la page *Backlog*
+* **Manipuler des issues** : créer dans un sprint spécifique (ou le backlog), modifier, supprimer et déplacer des issues depuis la page *Backlog*  
+* **Manipuler des tâches** : créer, modifier et supprimer des tâches depuis la page *Tâches*  
+* **Gérer l'avancement des tâches actives** : déplacer une tâche liée à une issue du sprint actif afin de mettre à jour son avancement <i>TODO, IN PROGRESS, DONE</i> depuis la page *Kanban*
+* **Manipuler des scénarios de tests** : créer, modifier, valider et supprimer des scénarios de tests unitaires ou E2E depuis la page *Scénarios*  
+* **Manipuler des tests** : supprimer des tests depuis la page *Tests*. Récupérer des requêtes pour faire une requête de modification du résultat du test depuis un fichier de test et ainsi modifier le test.  
+* **Accéder à l'historique de chaque test** : accéder à l'historique de chaque tests depuis la page *Tests*. Une fenêtre s'ouvre pour afficher le ratio succès/echec d'un test et son historique (date et résultat) 
+* **Manipuler une release** : créer, modifier et supprimer une release depuis la page *Releases*. Lorsqu'un utilisateur choisit de terminer un sprint manuellement, ce dernier doit créer une release dans la fenêtre qui apparaît. 
 
-<tr>
-      <td>7</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur un bouton “+” présent sous chaque catégorie sur la page “backlog” afin d’ajouter une issue en renseignant son titre. Son identifiant est affecté automatiquement.</td>
-      <td>1</td>
-      <td>Très haute</td>
-</tr>
+# Tests
 
-<tr>
-      <td>8</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur un bouton “x” présent à gauche de chaque issue sur la page “backlog” afin de supprimer l’issue. Une fenêtre de validation apparaît alors me demandant de valider mon choix ou d’annuler.</td>
-      <td>1</td>
-      <td>Très haute</td>
-</tr>
+## E2E - Cypress
+1. Se rendre dans le dossier <code>e2e/</code>
 
-<tr>
-      <td>9</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur une issue du backlog ce qui ouvre une fenêtre pré-remplie avec les données de l’issue afin de pouvoir modifier cette issue en renseignant jusqu’à: 
-      <ul>
-<li>un titre dans boîte de texte</li>
-<li>une US dans une boîte de texte</li>
-<li>une difficulté dans une boîte de texte n’acceptant que les nombres positifs</li>
-<li>une priorité à choisir entre la plus haute, haute, moyenne, faible, la plus faible.</li>
-</ul>
-Dès qu’un champs est modifié, sa valeur est sauvegardée.
-</td>
-      <td>5</td>
-      <td>Très haute</td>
-</tr>
+2. Lancer le docker des tests end 2 end avec la commande <code>sh test.sh</code>. Cela lance les tests dans le dossier <code>cypress/integration/examples</code>
 
-<tr>
-      <td>10</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir effectuer un drag and drop sur la page "backlog" d’une issue dans une catégorie afin de l’affecter à un sprint particulier ou de la remettre dans le backlog. Si je souhaite déplacer une issue depuis ou vers un sprint actif, une fenêtre de confirmation s’affiche. Si j’appuie sur le bouton “Confirmer”, l’issue est déplacée.</td>
-      <td>3</td>
-      <td>Très haute</td>
-</tr>
+3. Le résultat des tests sera affiché dans la console. Des vidéos des tests sont enregistrées dans <code>e2e/cypress/videos</code>. Des captures d'écran des tests sont enregistrées dans <code>e2e/cypress/screenshots</code>
 
-<tr>
-      <td>11</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur un bouton “créer un sprint” à côté de la catégorie backlog sur la page “backlog” qui crée une catégorie sprint numérotée automatiquement.</td>
-      <td>1</td>
-      <td>Très haute</td>
-</tr>
+## Unitaire - PHPUnit
+1. Se rendre dans le dossier <code>unit/</code>
 
-<tr>
-      <td>12</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir lancer le prochain sprint en cliquant sur un bouton qui m’ouvrira une fenêtre permettant de donner la date de début (date et heure) modifiable initialisée à la date actuelle ainsi que la date de fin du sprint. Ce bouton est présent en face du prochain sprint (sprint 1 si aucun n’a été lancé) mais il n’est pas possible de cliquer dessus si un sprint est en cours.</td>
-      <td>2</td>
-      <td>Très haute</td>
-</tr>
+2. Lancer le docker des tests unitaires avec la commande <code>sh init.sh</code>. Cela lance les tests qui sont dans le dossier <code>tests</code>
 
-<tr>
-      <td>13</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur un bouton “x” présent à droite de chaque sprint sur la page “backlog” afin de supprimer le sprint. Une fenêtre de validation apparaît alors me demandant de valider mon choix ou d’annuler. Si je valide, les issues qui étaient associées au sprint seront réaffectées à la catégorie backlog.</td>
-      <td>1</td>
-      <td>Moyenne</td>
-</tr>
-
-<tr>
-      <td>14</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur un bouton “modifier” présent à droite du sprint actif sur la page “backlog” afin de modifier le sprint. Une fenêtre apparaît permettant de modifier la date de début (date et heure) et la date de fin du sprint. Je peux alors valider la modification ou l’annuler.</td>
-      <td>2</td>
-      <td>Très basse</td>
-</tr>
-
-<tr>
-      <td>15</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur un bouton “terminer” sur la page “backlog” afin de pouvoir terminer le sprint actif avant que la date de fin ne soit atteinte. Les issues qui sont dans la catégorie “terminées” apparaissent alors barrées sur la page “backlog” et ne sont plus déplaçables et celles qui sont en “cours” ou “à faire” sont réaffectées à la catégorie “backlog”</td>
-      <td>2</td>
-      <td>Moyenne</td>
-</tr>
-
-<tr>
-      <td>16</td>
-      <td>En tant qu’utilisateur, je souhaite avoir accès à une page “sprint actif” qui affiche 3 catégories “à faire”, “en cours” et “terminée” dans lesquelles il y écrit, pour chaque issue du sprint actif, son titre, sa difficulté, sa priorité et son identifiant. S’il n’y a pas de sprint actif, la page l’affiche.</td>
-      <td>3</td>
-      <td>Très haute</td>
-</tr>
-<tr>
-      <td>17</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur une issue de la page “sprint actif” afin d’afficher toutes ses informations dans une fenêtre qui apparaît.</td>
-      <td>2</td>
-      <td>Basse</td>
-</tr>
-
-
-<tr>
-      <td>18</td>
-      <td>En tant qu’utilisateur, je souhaite avoir accès à une page “liste des tâches” regroupant toutes les tâches décrites par leur identifiant, durée, dépendances et US correspondante.  Les tâches sont placées soit dans la catégorie “En attente” soit dans une des catégories sprint en fonction de la position de leur US correspondante.</td>
-      <td>3</td>
-      <td>Très haute</td>
-</tr>
-
-<tr>
-      <td>19</td>
-      <td>En tant qu’utilisateur, je souhaite avoir accès à une page “trello” qui affiche 3 catégories “à faire”, “en cours” et “terminée” dans lesquelles sont écrites les tâches qui correspondent aux issues du sprint actif. S’il n’y a pas de sprint actif la page affiche un trello vide. </td>
-      <td>3</td>
-      <td>Très haute</td>
-</tr>
-
-
-<tr>
-      <td>20</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur un bouton “+” présent en haut de la page des tâches afin d’ajouter une tâche en renseignant son titre et en sélectionnant l’User Story qui lui correspond grâce à une liste déroulante. Son identifiant est affecté automatiquement.</td>
-      <td>1</td>
-      <td>Très haute</td>
-</tr>
-
-<tr>
-      <td>21</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur un bouton “x” présent à gauche de chaque tâche sur la page de la liste des tâches afin de supprimer la tâche. Une fenêtre de validation apparaît alors me demandant de valider mon choix ou d’annuler.</td>
-      <td>1</td>
-      <td>Très haute</td>
-</tr>
-
-<tr>
-      <td>22</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur une tâche de la liste des tâches, ce qui ouvre une fenêtre pré-remplie avec les données de la tâche afin de pouvoir modifier cette tâche qui comporte les champs suivant: 
-      <ul>
-<li>un titre dans boîte de texte</li>
-<li>une tâche dans une boîte de texte</li>
-<li>une Definition of Done dans une boîte de texte
-<li>une durée en heure/homme dans une boîte de texte n’acceptant que les nombres positifs de 1 à 8 </li>
-<li>une ou plusieurs tâches dont elle dépend dans une liste déroulante des id des tâches (peut être vide). Les tâches sélectionnées auront une marque à côté de leur id dans la liste pour signaler qu’elles le sont. Les id des tâches sélectionnées seront affichés en ligne à droite de la liste déroulante. Cliquer sur une tâches marquée dans la liste ou sur une croix d’une tâche affichée à droite supprimera la dépendance</li>
-<li>la ou les User Stories qui lui correspondent dans une liste déroulante des id des issues (ne peut pas être vide). L’ajout ou la suppression de dépendance se fera comme pour les tâches. Cependant, il devra y avoir au moins une User Story de selectionnée pour valider la modification.</li>
-</ul>
-</td>
-      <td>5</td>
-      <td>Très haute</td>
-</tr>
-
-<tr>
-      <td>23</td>
-      <td> En tant qu’utilisateur, je souhaite pouvoir effectuer un drag and drop sur la page “trello” entre les 3 catégories “à faire”, “en cours” et “terminée” afin de modifier l’avancement de la tâche: 
-      <ul>
-<li>si une issue a au moins une tâches qui dépend d’elle dans la catégorie “en cours”, cette issue sera dans cette catégorie sur la page du sprint actif</li>
-<li>si une issue toutes les tâches qui dépendent d’elle dans la catégorie “terminée”, cette issue sera dans cette catégorie sur la page du sprint actif</li>
-<li>si une issue a toutes les tâches qui dépendent d’elle dans la catégorie “à faire”, cette issue sera dans cette catégorie sur la page du sprint actif</li>
-</ul>
-</td>
-      <td>5</td>
-      <td>Très haute</td>
-</tr>
-
-<tr>
-      <td>24</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur une tâche de la page “trello” afin d’afficher toutes ses informations dans une fenêtre qui apparaît.</td>
-      <td>2</td>
-      <td>Basse</td>
-</tr>
-
-<tr>
-      <td>25</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir avoir accès à une page “liste des tests” qui contient tous les tests de mon projet. Pour chaque test,  il y a d’affiché l’identifiant, le titre, le dernier lancement, le résultat et un bouton "API". En haut de la page je vois le taux de réussite de tous les tests de la liste</td>
-      <td>3</td>
-      <td>Très haute</td>
-</tr>
-
-<tr>
-      <td>26</td>
-      <td>En tant qu’utilisateur, je souhaite avoir accès à une page “scénarios de tests” où je peux voir tous les scénarios de test que j’ai proposés</td>
-      <td>2</td>
-      <td>Très basse</td>
-</tr>
-
-<tr>
-      <td>27</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir, depuis la page “scénarios de tests”, appuyer sur un bouton “+” qui ouvre un formulaire contenant un champs texte “scénario”. Lorsque je valide le scénario, ce dernier est ajouté à la liste de scénario.</td>
-      <td>1</td>
-      <td>Très haute</td>
-</tr>
-
-<tr>
-      <td>28</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir, depuis la page “scénarios de tests”, appuyer sur un scénario qui ouvre une fenêtre pré-remplie à droite de l'écran formulaire avec un champs texte pré-rempli avec le scénario correspondant, et qui est modifiable.
-</td>
-      <td>2</td>
-      <td>Basse</td>
-</tr>
-<tr>
-      <td>29</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir, depuis la page la page des tests, récupérer des lignes de code me permettant d'appeler une api afin de modifier le résultat d'un test.</td>
-      <td>3</td>
-      <td>Très haute</td>
-</tr>
-<tr>
-      <td>30</td>
-      <td>En tant qu’utilisateur, je souhaite que lorsque que j’ai validé un scénario sur la page “scénarios de tests” qu'une fenêtre s’ouvre alors dans laquelle je dois renseigner la tâche ou l'issue qui est lié à ce test.
-</td>
-      <td>3</td>
-      <td>Très haute</td>
-</tr>
-<tr>
-      <td>31</td>
-      <td> En tant qu’utilisateur, je souhaite pouvoir cliquer sur un bouton cahier des tests de la page des test ce qui ouvre une fenêtre où je peux sélectionner un test puis à quelle date du test je veux accéder. Pour une date sélectionnée je peux lire :
-      <ul>
-<li>le résultat de des test à cette date</li>
-</ul>
-et je peux lire, peu importe la date : 
-<ul>
-<li>l’identifiant</li>
-<li>le titre</li>
-<li>la description</ul>
-</ul>
-</td>
-      <td>3</td>
-      <td>Haute</td>
-</tr>
-<tr>
-      <td>32</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur un bouton “x” présent à gauche de chaque test sur la page “liste des tests” afin de supprimer le test. Une fenêtre de validation apparaît alors me demandant de valider mon choix ou d’annuler.</td>
-      <td>2</td>
-      <td>Haute</td>
-</tr>
-<tr>
-      <td>33</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir cliquer sur un bouton “x” présent à gauche de chaque scenario sur la page “liste des scenarios” afin de supprimer le scenario. Une fenêtre de validation apparaît alors me demandant de valider mon choix ou d’annuler. Je ne peux pas supprimer un scenario qui a un test associé.</td>
-      <td>3</td>
-      <td>Haute</td>
-</tr>
-<tr>
-      <td>34</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir avoir accès à une page qui comporte toutes les releases de mon projet en cours. Chaque release sera caractérisée par un fichier zip, sa date de création, la liste des issues réalisées et un id sous la forme X.Y.Z où X est le numéro de version majeure, Y est le numéro de version mineure et Z le numéro du patch. </td>
-      <td>3</td>
-      <td>Très haute</td>
-</tr>
-<tr>
-      <td>35</td>
-      <td>En tant qu’utilisateur, je souhaite pouvoir créer une nouvelle release en appuyant sur un bouton “+”. Il faudra ensuite donner un fichier zip et en choisissant un des niveaux de modification suivants grâce à des boutons radio :
-      <ul>
-<li>version majeure</li>
-<li>version mineure</li>
-<li>patch</li>
-</ul>
-Pour la première release, la version est automatiquement la 1.0.0 et il n’y a pas la possibilité de le modifier. Si un niveau de modification est sélectionné, le numéro de version est le même que le précédent, avec le numéro du niveau correspondant incrémenté de 1.
-Il faut choisir grâce à une liste déroulante les id de toutes les issues réalisées. 
-Il faut aussi que j’ai renseigné une documentation utilisateur et une documentation d’installation sur la page “documentation”. Si la release est créée alors les 2 documentations de la page "documentation" sont celles de cette dite release.
-</td>
-      <td>5</td>
-      <td>Très haute</td>
-</tr>
-<tr>
-      <td>36</td>
-      <td>En tant qu’utilisateur je veux pouvoir accéder une page “documentation” dans laquelle il y a 2 champs : documentation utilisateur et documentation d’installation.</td>
-      <td>1</td>
-      <td>Très haute</td>
-</tr>
-<tr>
-      <td>37</td>
-      <td>En tant qu’utilisateur je veux pouvoir cliquer sur un bouton “ajouter” à côté des 2 catégories (documentation utilisateur et documentation d’installation) qui ouvre une fenêtre de gestion de fichiers  afin de téléverser le fichier texte de la documentation souhaitée. </td>
-      <td>1</td>
-      <td>Très haute</td>
-</tr>
-<tr>
-      <td>38</td>
-      <td>En tant qu'utilisateur je veux pouvoir cliquer sur un bouton "versions" sur la page "documentation" à côté des 2 catégories(installation, utilisation) afin d'afficher à droite de l'écran une liste "historique" contenant des liens de la documentation des releases précédentes de la catégorie(installation, utilisation).  Lorsque je clique sur un lien je télécharge la documentation. Les boutons sont grisés s'il n'y a pas eu de release. Si je clique de nouveau sur "versions" la fenêtre à droite de l'écran disparaît.</td>
-      <td>3</td>
-      <td>Haute</td>
-</tr>
-<tr>
-      <td>39</td>
-      <td>En tant qu'utilisateur je veux pouvoir cliquer sur un bouton "télécharger" sur la page "documentation" à côté des 2 catégorie afin de télécharger la documentation de la catégorie sélectionnée.</td>
-      <td>1</td>
-      <td>Très haute</td>
-</tr>
-
-<tr>
-      <td>40</td>
-      <td>En tant qu'utilisateur je veux pouvoir effectuer un drag and drop sur la page "documentation" d'un lien de la partie "historique" vers la partie de la page à gauche de "historique" afin d'utiliser ce fichier comme documentation actuelle de la catégorie (installation, utilisation) depuis laquelle j'ai ouvert "historique". </td>
-      <td>2</td>
-      <td>Haute</td>
-</tr>
-  </tbody>
-</table>
+3. Le résultat des tests sera affiché et enregistré dans le fichier <code>results.xml</code>
