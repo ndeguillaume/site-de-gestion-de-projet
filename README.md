@@ -4,7 +4,7 @@
 
 # Installation
 
-1. Télécharger la release (docker) 3.0.0 du projet <a href="https://ndeguillaume.github.io"> ici </a>
+1. Télécharger la release (docker) 3.0.0 du projet <a href="https://ndeguillaume.github.io"> ici </a> ou clonez ce projet
 
 2. Décompresser l'archive avec la commande <code>tar xf 3.0.0_docker.tar.gz</code>
 
